@@ -38,7 +38,7 @@ const createCard = card => {
   return markup;
 };
 
-simpleLightbox();
+// simpleLightbox();
 
 export const createCardsMarkup = (cards, mustClean = true) => {
   const markup = cards.reduce((acc, card) => {
@@ -53,12 +53,19 @@ export const createCardsMarkup = (cards, mustClean = true) => {
   }
 };
 
-function simpleLightbox() {
-  const lightbox = new SimpleLightbox('.gallery a', {
-    captionDelay: 250,
-    captionPosition: 'bottom',
-    captionSelector: 'img',
-    captionsData: 'alt',
-  });
-  lightbox.refresh();
-}
+// function simpleLightbox() {
+//   const lightbox = new SimpleLightbox('.gallery a', {
+//     captionDelay: 250,
+//     captionPosition: 'bottom',
+//     captionSelector: 'img',
+//     captionsData: 'alt',
+//   });
+//   lightbox.refresh();
+// }
+const lightbox = new SimpleLightbox('.gallery a', {
+  captionDelay: 250,
+  captionPosition: 'bottom',
+  captionSelector: 'img',
+  captionsData: 'alt',
+});
+lightbox.refresh();
