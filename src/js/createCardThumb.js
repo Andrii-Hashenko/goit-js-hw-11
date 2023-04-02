@@ -1,5 +1,6 @@
 import { refs } from './refs/refs';
 import SimpleLightbox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
 
 const createCard = card => {
   const {
@@ -37,6 +38,8 @@ const createCard = card => {
   return markup;
 };
 
+simpleLightbox();
+
 export const createCardsMarkup = (cards, mustClean = true) => {
   const markup = cards.reduce((acc, card) => {
     acc += createCard(card);
@@ -48,11 +51,14 @@ export const createCardsMarkup = (cards, mustClean = true) => {
   } else {
     refs.gallery.insertAdjacentHTML('beforeend', markup);
   }
+};
 
+function simpleLightbox() {
   const lightbox = new SimpleLightbox('.gallery a', {
     captionDelay: 250,
     captionPosition: 'bottom',
     captionSelector: 'img',
     captionsData: 'alt',
   });
-};
+  lightbox.refresh();
+}

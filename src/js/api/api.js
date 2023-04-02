@@ -1,5 +1,6 @@
 import axios from 'axios';
 
+// const axios = require('axios/dist/node/axios.cjs');
 const PER_PAGE = 40;
 
 const createOptions = options => {

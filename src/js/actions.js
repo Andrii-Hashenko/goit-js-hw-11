@@ -17,6 +17,7 @@ export const onSubmit = e => {
     refs.gallery.innerHTML = '';
     return;
   }
+  scroll();
 
   getImages(query)
     .then(res => res.data)
